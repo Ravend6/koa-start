@@ -1,11 +1,12 @@
-# Simple TODO app
+# Koa start
 ## Features:
 - koa
-- mongoose
-- koa-mongoose
+- mongoose es6
 - local and social auth
 - jwt tokens generations
 - koa-router
 - template nunjucks
 - socket.io
 - csrf
+- acl
+- pagination

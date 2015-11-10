@@ -1,0 +1,28 @@
+{% extends "../layouts/forum.html" %}
+
+{% block title %}Форумы{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-header">Форумы</h1>
+    <a href="{{ router.forums.url('new') }}">Создать новый форум</a>
+    {% for forum in forums %}
+      <article>
+        <h2><a href="{{ router.forums.url('show', forum.slug) }}">{{ forum.title }}</a></h2>
+        <p>{{ forum.description }}</p>
+        <p class="forums-list-moderators"><b>Модераторы:</b>
+          {% for moderator in forum.moderators %}
+            <a href="#">{{ moderator.displayName }}</a>
+          {% else %}
+            еще не назначены
+          {% endfor %}
+        </p>
+        <div><a href="{{ router.forums.url('edit', forum.id) }}">Редактировать</a></div>
+      </article>
+    {% else %}
+      <article>
+        <h2>Форумов еще не создано</h2>
+      </article>
+    {% endfor %}
+  </div>
+{% endblock %}

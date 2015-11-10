@@ -1,0 +1,12 @@
+{% extends "../layouts/forum.html" %}
+
+{% block title %}Новый Форум{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="page-header">Новый Форум</h1>
+    {% set buttonName = 'Создать' %}
+    {% set buttonClass = 'success' %}
+    {% include "./_form.html" %}
+  </div>
+{% endblock %}
